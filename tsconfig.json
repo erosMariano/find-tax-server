@@ -4,14 +4,16 @@
       "module": "commonjs",
       "strict": true,
       "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "outDir": "./dist",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false, // Adicione ou altere para false
       "rootDir": "./",
-      "emitDecoratorMetadata": true, // Necessário para TypeORM
-      "experimentalDecorators": true, // Necessário para TypeORM,
-      "strictPropertyInitialization": false, // Necessário para TypeORM
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "paths": {
+        "*": ["node_modules/*"]
+      }
     },
-    "include": ["server/**/*.ts"],
+    "include": ["server/**/*"],
     "exclude": ["node_modules"]
   }

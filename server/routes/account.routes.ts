@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { AccountService } from '../services/account.service';
+import { AccountsService } from '../services/AccountsService';
 
 const router = Router();
-const accountService = new AccountService();
+const accountService = new AccountsService();
 
 router.get('/accounts', async (req, res) => {
   try {
     const accounts = await accountService.getAllAccounts();
-    res.json(accounts);
+    res.json({ accounts , "message": "Accounts fetched successfully!" });
   } catch (error) {
     res.status(500).json({ message: 'Error fetching accounts', error });
   }

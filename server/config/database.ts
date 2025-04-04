@@ -1,7 +1,6 @@
 // server/config/database.ts
 import { DataSource } from 'typeorm';
 import { config } from 'dotenv';
-import { Account } from '../entities/account.entity';
 
 // Carrega as variáveis de ambiente do arquivo .env
 config();
@@ -14,7 +13,7 @@ export const AppDataSource = new DataSource({
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
   schema: process.env.POSTGRES_SCHEMA,
-  synchronize: process.env.MODE === 'development', // Sincroniza apenas em desenvolvimento
+  synchronize:false, // Sincroniza apenas em desenvolvimento
   logging: process.env.MODE === 'development', // Logs apenas em desenvolvimento
   entities: ['server/entities/**/*.{ts,js}'],
   subscribers: [],
