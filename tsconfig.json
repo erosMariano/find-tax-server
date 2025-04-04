@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./dist",
+      "rootDir": "./",
+      "emitDecoratorMetadata": true, // Necessário para TypeORM
+      "experimentalDecorators": true, // Necessário para TypeORM,
+      "strictPropertyInitialization": false, // Necessário para TypeORM
+    },
+    "include": ["server/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
